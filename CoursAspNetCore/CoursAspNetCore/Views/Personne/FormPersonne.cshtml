@@ -1,0 +1,48 @@
+﻿@model Personne
+@{ 
+    Layout = "_Layout";
+}
+<h2>FormPersonne</h2>
+@*<form action="" method="post">
+
+    </form>*@
+<form asp-controller="Personne" asp-action="AddPersonne" method="post">
+    @*<div>
+            <label>Nom</label>
+            <input type="text" name="Nom" />
+        </div>
+        <div>
+            <label>Prénom</label>
+            <input type="text" name="Prenom" />
+        </div>
+        <div>
+            <label>Autre</label>
+            <input type="text" name="autre" />
+        </div>*@
+    <div>
+        <label asp-for="Nom"></label>
+        <input asp-for="Nom" />
+        <span asp-validation-for="Nom"></span>
+    </div>
+    <div>
+        <label asp-for="Tel"></label>
+        <input asp-for="Tel" />
+        <span asp-validation-for="Tel"></span>
+    </div>
+    <div>
+        <label asp-for="Prenom"></label>
+        <input asp-for="Prenom" />
+    </div>
+    <div>
+        <button type="submit">Valider</button>
+    </div>
+</form>
+
+@*<=> du Tag helper From en Helper*@
+@*@Html.BeginForm("AddPersonne", "Personne", FormMethod.Post)
+
+@{Html.EndForm()};*@
+
+
+
+

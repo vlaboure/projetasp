@@ -1,0 +1,53 @@
+﻿@model User
+@{ 
+    ViewData["Title"] = "Entrer les infos utilisateur";
+}
+<header>
+    <h2>Ajout d'un nouvel utilisateur</h2>
+</header>
+<div class="container">
+    <form asp-controller="User" asp-action="AddUser" method="post">
+        <div class="row">
+            <div class="col-lg-3">
+                <label asp-for="UserName"></label>
+            </div>
+            <div class="col-lg-9">
+                <input asp-for="UserName" class="form-control" />
+            </div>
+        </div>
+        @*<div class="row">
+            <div class="col-lg-3">
+                <label asp-for="Adress"></label>
+            </div>
+            <div class="col-lg-9">
+                <input asp-for="Adress" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <label asp-for="Tel"></label>
+            </div>
+            <div class="col-lg-9">
+                <input asp-for="Tel" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <label asp-for="Mail"></label>
+            </div>
+            <div class="col-lg-9">
+                <input asp-for="Mail" class="form-control" />
+            </div>
+        </div>*@
+        <div class="row">
+            <div class="col-lg-5">
+                <input type="submit" name="valid" class="form-control" value="valider"/>
+            </div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-5">
+                <input type="submit" name="submit" class="form-control"vallue=""/>
+            </div>
+        </div>
+    </form>
+</div>
+

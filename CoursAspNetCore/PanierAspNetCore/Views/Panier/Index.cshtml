@@ -1,0 +1,55 @@
+﻿@model Panier
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Votre Panier</h1>
+        </div>
+    </div>
+    @if(Model != null)
+    {
+        @foreach(ProduitPanier p in Model.produits)
+        {
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="@p.produit.Image"/>
+                </div>
+                <div class="col-lg-3">
+                    @p.produit.Titre
+                </div>
+                <div class="col-lg-2">
+                    @p.produit.Prix €
+                </div>
+                <div class="col-lg-2">
+                    @p.Qty
+                </div>
+                <div class="col-lg-2">
+                    @(p.Qty * p.produit.Prix) €
+                </div>
+            </div>
+
+        }
+        <div class="row">
+            <div class="col-lg-6">
+                Total : 
+            </div>
+            <div class="col-lg-6">
+                @Model.Total €
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <a asp-controller="Panier" asp-action="SavePanier">Valider votre panier</a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-lg-12">
+                Panier Vide
+            </div>
+        </div>
+
+    }
+</div>

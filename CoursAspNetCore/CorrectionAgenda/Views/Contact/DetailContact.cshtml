@@ -1,0 +1,38 @@
+﻿@model Contact
+@{
+    Layout = "_Layout";
+}
+<div>
+    <h1>Detail du contact</h1>
+    <div>
+        <div>
+            Nom : @Model.Nom
+        </div>
+        <div>
+            Prénom : @Model.Prenom
+        </div>
+        <div>
+            Tel : @Model.Tel
+        </div>
+    </div>
+    <div>
+        <h2>Emails : </h2>
+        @if (Model.emails.Count > 0)
+        {
+            foreach (Email e in Model.emails)
+            {
+                <div>
+                    @e.Mail
+                </div>
+            }
+        }
+        else
+        {
+            <div>
+                Pas d'emails
+            </div>
+
+        }
+
+    </div>
+</div>

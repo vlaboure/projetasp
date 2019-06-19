@@ -1,0 +1,21 @@
+﻿@model List<Personne>
+@{
+    Layout = "_Master";
+}
+
+<h2>Liste Personne</h2>
+
+@foreach(Personne p in Model)
+{
+    <div class="row">
+        <div class="col">
+            Nom : @p.Nom
+        </div>
+        <div class="col">
+            Prénom : @p.Prenom
+        </div>
+        <div class="col">
+            <a asp-controller="Personne" asp-action="DetailPersonne" asp-route-id="@p.Id">Detail</a>
+        </div>
+    </div>
+}

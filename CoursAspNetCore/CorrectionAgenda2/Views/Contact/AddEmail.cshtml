@@ -1,0 +1,33 @@
+﻿@model Email
+@{
+    ViewData["Title"] = "Ajouer un email";
+}
+<div class="container">
+    @if(ViewBag.error != null && !ViewBag.error)
+    {
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-success">
+                    Email Ajouté
+                </div>
+            </div>
+        </div>
+
+    }
+    <form asp-action="AddEmail" asp-controller="Contact" method="post">
+        <input type="hidden" name="ContactId" value="@ViewBag.ContactId" />
+        <div class="row">
+            <div class="col-3">
+                <label asp-for="Mail" ></label>
+            </div>
+            <div class="col-3">
+                <input asp-for="Mail" class="form-control"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-danger form-control">Ajouter</button>
+            </div>
+        </div>
+    </form>
+</div>

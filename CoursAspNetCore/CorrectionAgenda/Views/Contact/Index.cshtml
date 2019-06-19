@@ -1,0 +1,24 @@
+﻿@model List<Contact>
+@{
+    Layout = "_Layout";
+}
+<div>
+    <h1>Liste des contacts</h1>
+    @foreach(Contact c in Model)
+    {
+        <div>
+            <div>
+                @c.Nom
+            </div>
+            <div>
+                @c.Prenom
+            </div>
+            <div>
+                @c.Tel
+            </div>
+            <div>
+                <a asp-action="DetailContact" asp-controller="Contact" asp-route-id="@c.Id">Detail</a>
+            </div>
+        </div>
+    }
+</div>

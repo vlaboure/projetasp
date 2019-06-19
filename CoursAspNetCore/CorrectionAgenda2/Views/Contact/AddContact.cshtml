@@ -1,0 +1,82 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Ajouter un contact";
+}
+
+<div class="container">
+    @if (ViewBag.error != null && ViewBag.error)
+    {
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-danger">
+                    Erreur d'insertion
+                </div>
+            </div>
+        </div>
+    }
+    <form enctype="multipart/form-data" asp-route-id="" asp-action="AddContact" asp-controller="Contact" method="post">
+        @if (Model != null)
+        {
+            <input type="hidden" asp-for="Id" />
+
+        }
+        <div class="row">
+            <div class="col-3">
+                <label asp-for="Nom"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Nom" class="form-control" />
+            </div>
+            <div class="col-3">
+                <span asp-validation-for="Nom"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <label asp-for="Prenom"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Prenom" class="form-control" />
+            </div>
+            <div class="col-3">
+                <span asp-validation-for="Prenom"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <label asp-for="Tel"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Tel" class="form-control" />
+            </div>
+            <div class="col-3">
+                <span asp-validation-for="Tel"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <label>Avatar</label>
+            </div>
+            <div class="col-6">
+                <input type="file" name="avatar" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="form-control btn  btn-danger" type="submit">
+                    @*@(Model != null ? "" : "Ajouter")*@
+                    @if (Model != null)
+                    {
+
+                        <span>Modifier</span>
+                    }
+                    else
+                    {
+                        <span>Ajouter</span>
+                    }
+
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

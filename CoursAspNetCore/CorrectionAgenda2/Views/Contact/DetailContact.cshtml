@@ -1,0 +1,40 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Detail Contact " + Model.Nom;
+}
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <img src="~/images/Avatars/@Model.Avatar" width="100%"/>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    @Model.Nom @Model.Prenom
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @Model.Tel
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <h2>Emails</h2>
+                        </div>
+                    </div>
+                    @foreach(Email e in Model.emails)
+                    {
+                        <div class="row">
+                            <div class="col">
+                                @e.Mail
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

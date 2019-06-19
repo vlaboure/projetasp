@@ -1,0 +1,29 @@
+﻿@model Personne
+<div class="container">
+    <form asp-controller="Personne" enctype="multipart/form-data" asp-action="AddPersonne" method="post">
+        <div class="row">
+            <label asp-for="Nom"></label>
+            <input asp-for="Nom" class="form-control" />
+            <span asp-validation-for="Nom" class="text-warning"></span>
+        </div>
+        <div class="row">
+            <label asp-for="Prenom"></label>
+            <input asp-for="Prenom" class="form-control" />
+            <span asp-validation-for="Prenom" class="text-warning"></span>
+        </div>
+        <div class="row">
+            <label asp-for="Tel"></label>
+            <input asp-for="Tel" class="form-control" />
+            <span asp-validation-for="Tel" class="text-warning"></span>
+        </div>
+
+        <div class="row">
+            <label> Image de la personne</label>
+            <input type="file" name="imagePersonne" />
+        </div>
+        
+        <div class="row">
+            <button class="btn btn-danger" type="submit">Ajouter</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+﻿@*@using CoursAspNetCore.ViewModels
+@model GetPersonneViewModel*@
+@model CoursAspNetCore.ViewModels.GetPersonneViewModel
+@{
+    Layout = "_Master";
+}
+
+<h2>Detail d'une personne</h2>
+
+<div>
+    Nom : @Model.personne.Nom
+</div>
+<div>
+    Prenom : @Model.personne.Prenom
+</div>
+<div>
+    Rue : @Model.adresse.Rue
+</div>
+<div>
+    Ville : @Model.adresse.Ville
+</div>

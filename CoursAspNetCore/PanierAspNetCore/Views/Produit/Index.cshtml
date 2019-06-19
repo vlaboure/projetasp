@@ -1,0 +1,30 @@
+﻿@model List<Produit>
+<div class="container">
+    <div class="row">
+        @foreach(Produit p in Model)
+        {
+        <div class="col-lg-3 produit">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="@p.Image" class="monImage" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    @p.Titre
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    @p.Prix €
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <a asp-controller="Panier" asp-route-id="@p.Id" asp-action="AddProduit" class="btn btn-danger addCart">Ajout au panier</a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

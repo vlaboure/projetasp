@@ -1,0 +1,20 @@
+﻿@model List<Personne>
+<div class="container">
+    @foreach(Personne p in Model)
+    {
+    <div class="row">
+        <div class="col-lg-3">
+            @p.Nom
+        </div>
+        <div class="col-lg-3">
+            @p.Prenom
+        </div>
+        <div class="col-lg-3">
+            @p.Tel
+        </div>
+        <div class="col-lg-3">
+            <img width="100" src="~/images/@p.Image" />
+        </div>
+    </div>
+    }
+</div>

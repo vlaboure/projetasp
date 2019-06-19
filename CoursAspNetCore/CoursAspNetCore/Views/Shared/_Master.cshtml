@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Master</title>
+    @*Tag environement permet de definir des elements en fonction de environement de dev*@
+    @*L'environement est à ajouter dans le fichier launchSettings.json*@
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    </environment>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="container">
+        <nav class="nav">
+            
+            @*<a href="~/Personne">Accueil personne</a>*@
+            @*@Html.ActionLink("Accueil Personne","Accueil","Personne", null, new { @class="btn" } )*@
+            @*<=> en tag Helpers*@
+            <a asp-action="Accueil" asp-controller="Personne" class="btn">Accueil Personne</a>
+            <a asp-action="Index" asp-controller="Home">Accueil site</a>
+
+        </nav>
+    </header>
+    <section class="container">
+        @*Methode pour injecter le résultat de la vue <=> helpers razor*@
+        @RenderBody()
+    </section>
+    <footer>
+        2019
+    </footer>
+</body>
+</html>
